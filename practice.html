@@ -11,31 +11,42 @@
 <body>
     <!-- General Div to hold everything -->
     <div>
-        <!-- Div for word -->
-        <div id="wordDiv">
-
+        <!-- Page title -->
+        <div id="practiceTitle">
+            <h1>Practice!</h1>
         </div>
+        <!-- Instructions -->
+        <div id="practiceInstructions">
+            <p>Try to recall the definition of the word shown on screen. Click on the word to show its definition. If you got it right, click on "Got it!" to remove it from your stack and move on to the next word. If not, click on "Keep practicing" to keep in your stack and move to the next word.</p>
+            <p>Whenever you like, click on "Beginning" to move to the first word in the stack and keep practicing, or click on "Start Over" to practice all the words over again.</p>
+        </div>
+
+        <!-- Div for word -->
+        <div id="wordDiv"></div>
 
         <!-- Div for definition -->
-        <div id="wordDef">
-
-        </div>
-
-        <!-- Hold total count of cards in stack -->
-        <div id="wordCount">
-
-        </div>
+        <div id="wordDefDiv"></div>
 
         <!-- Buttons -->
-        <button id="btnPrevious">Previous</button>
+        <button id="btnBegin">Beginning</button>
         <button id="btnGotIt">Got it!</button>
         <button id="btnKeep">Keep practicing</button>
         <button id="btnNext">Next</button>
+
+        <!-- Hold total count of cards in stack -->
+        <div id="wordCountDiv"></div>
+
+        <!-- Holds count of words learned -->
+        <div id="wordLearnedDiv"></div>
+
+        <!-- Button to start over -->
+        <button id="btnStartOver">Start Over</button>
         
     </div>
     
     <!-- Scripts for JQuery and JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/javascript/logic.js"></script> 
 </body>
 
 <footer>
