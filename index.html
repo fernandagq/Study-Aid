@@ -19,12 +19,11 @@
         //     var term= $(this).attr("data-term");
         
         $.ajax({
-            url: "http://www.dictionaryapi.com/api/v1/references/collegiate/xml/voluminous?key=1f40dde8-50d6-4eb6-9168-6f465c469eb9",
+            url: "http://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=1f40dde8-50d6-4eb6-9168-6f465c469eb9",
             method: "GET"
         }).then(function(response){
             console.log(response);
-               
-            
+
 
         });
         
