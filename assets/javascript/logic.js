@@ -17,6 +17,7 @@ var wordLearned = 0;
 var outerIndex = 0;
 var wordIndex = 0;
 var defIndex = 1;
+var stackEnded = false;
 
 function popArray() {
     wordArray = [
@@ -36,6 +37,7 @@ function loadPractice() {
     wordLearned = 0;
     outerIndex = 0;
     popArray();
+    stackEnded = false;
 
     function shuffleArray(array) {
         for (let i = wordArray.length - 1; i > 0; i--) {
@@ -50,55 +52,81 @@ function loadPractice() {
     $("#wordCountDiv").text(wordArray.length);
     $("#wordLearnedDiv").text(wordLearned)
 
+    console.log(wordArray);
 }; // End of loadPractice function
 
 // WHEN user clicks on the word
 $(this).on("click", "#wordDiv", function() {
-    $("#wordDefDiv").show();
+    console.log(stackEnded);
+    if (stackEnded == false) {
+        $("#wordDefDiv").show();
+    }
 });
 
 // WHEN user clicks on Beginning button
 $(this).on("click", "#btnBegin", function() {
-    outerIndex = 0;
-    $("#wordDiv").text(wordArray[outerIndex][wordIndex]);
-    $("#wordDefDiv").text(wordArray[outerIndex][defIndex]).hide();
+    if (wordArray.length == 0) {
+        endStack();
+    } else if (wordArray.length > 0) {
+        outerIndex = 0;
+        stackEnded = false;
+        $("#wordDiv").text(wordArray[outerIndex][wordIndex]);
+        $("#wordDefDiv").text(wordArray[outerIndex][defIndex]).hide();
+    }
 });
 
 function endStack() {
-    var endOfStack = "You've reached the end of the stack. Either click <b>Beginning</b> to practice the remaining words, or click <b>Start Over</b> to practice all words over again."
+    var endOfStack = "You've reached the end of the stack. Click <b>Beginning</b> to practice any remaining words, or click <b>Start Over</b> to practice all words over again."
     $("#wordDiv").html(endOfStack);
     $("#wordDefDiv").hide();
+    stackEnded = true;
 };
 
 // WHEN user clicks on Next button
 function nextWord() {
-    outerIndex++;
-    if (outerIndex < wordArray.length) { 
-        $("#wordDiv").text(wordArray[outerIndex][wordIndex]);
-        $("#wordDefDiv").text(wordArray[outerIndex][defIndex]).hide();
-    } else if (outerIndex + 1 >= wordArray.length) {
-        outerIndex--;
+    if (outerIndex > wordArray.length) {
         endStack();
-    };
+    } else if (outerIndex == wordArray.length) {
+        endStack();
+    } else if (outerIndex < wordArray.length) {
+        outerIndex++;
+        if (outerIndex == wordArray.length) {
+            endStack();
+        } else if (outerIndex < wordArray.length) {
+            $("#wordDiv").text(wordArray[outerIndex][wordIndex]);
+            $("#wordDefDiv").text(wordArray[outerIndex][defIndex]).hide();
+        }
+    }
+    console.log("Next: " + outerIndex);
 }
 
 $(this).on("click", "#btnNext", function() {
-    nextWord();
+    if (outerIndex <= wordArray.length - 1) {
+        nextWord();
+    }
 });
 
 // WHEN user clicks on GotIt button
-// Need to fix issue with counter continuing whenever user clicks button
 $(this).on("click", "#btnGotIt", function() {
-    wordArray.splice(outerIndex, 1);
-    $("#wordCountDiv").text(wordArray.length);
-    wordLearned++;
-    $("#wordLearnedDiv").text(wordLearned);
-    nextWord();
+    if (wordArray.length == 0) {
+        endStack();
+    } else if (wordArray.length > 0) {
+        wordArray.splice(outerIndex, 1);
+        console.log(wordArray);
+        console.log("GotIt: " + outerIndex);
+        $("#wordCountDiv").text(wordArray.length);
+        wordLearned++;
+        $("#wordLearnedDiv").text(wordLearned);
+        outerIndex--;
+        nextWord();
+    }
 });
 
 // WHEN user clicks on KeepPracticing button
 $(this).on("click", "#btnKeep", function() {
-    nextWord();
+    if (outerIndex < wordArray.length) {
+        nextWord();
+    }
 });
 
 // WHEN user clicks on StartOver button
