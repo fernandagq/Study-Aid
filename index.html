@@ -13,6 +13,13 @@
             value="Search" class="search">
         </form>
         <div id="definition"></div>
+
+        <!-- PRONUNCIATION div goes here -->
+        <div>
+            <h1>Pronunciation</h1>
+            <!-- Div to show pronunciation stuff -->
+            <div id="pronDiv"></div>
+        </div>
         
         <script type="text/javascript">
         
@@ -47,18 +54,14 @@
         }
 
         $(".search").on("click", function(event){
-            console.log(word);
             event.preventDefault();
-
             var word= $("#term-input").val().trim();
-
-            displaySearchTerm();
-            
+            // displaySearchTerm();
             console.log(word);
-
         });
 
         // $(document).on("click", ".search", displaySearchTerm);
         </script>
+        <script src="./assets/javascript/logic.js"></script>
     </body>
 </html>
