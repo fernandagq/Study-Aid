@@ -6,28 +6,59 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
-        <!-- <form id="input">
+        <form id="input">
             <label for="term-input">Search term:</label>
             <input type="text" id="term-input">
-            <input id="add-term" type="submit" value="Search"></input>
-        </form> -->
+            <input id="add-definition" type="submit"
+            value="Search" class="search">
+        </form>
+        <div id="definition"></div>
         
         <script type="text/javascript">
         
-        // function displaySearchTerm(){
-        
-        //     var term= $(this).attr("data-term");
+        function displaySearchTerm(){
+            
+            var word= $("#term-input").val().trim();
+            console.log(word);
+            var key= "?key=1f40dde8-50d6-4eb6-9168-6f465c469eb9";
+            
+            var queryUrl= "http://www.dictionaryapi.com/api/v3/references/collegiate/json/";
         
         $.ajax({
-            url: "http://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=1f40dde8-50d6-4eb6-9168-6f465c469eb9",
-            method: "GET"
+            url: queryUrl + word + key,
+            method:"GET"
         }).then(function(response){
-            console.log(response);
+            var results= response;
+        for (var i=0; i<results.length; i++) {
+            console.log(response[i].shortdef);
 
+            var termDiv = $("<div>");
+            var term= response[i].shortdef[0];
+            var p= $("<p>");
+            p.text("defintion: "+ term);
+            
+            
+            termDiv.append(p);
+            $("#definition").append(termDiv);
+        }
 
         });
         
-        
+        }
+
+        $(".search").on("click", function(event){
+            console.log(word);
+            event.preventDefault();
+
+            var word= $("#term-input").val().trim();
+
+            displaySearchTerm();
+            
+            console.log(word);
+
+        });
+
+        // $(document).on("click", ".search", displaySearchTerm);
         </script>
     </body>
 </html>
