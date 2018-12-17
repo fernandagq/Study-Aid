@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wordscape - Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+</head>
+<body>
+    <!-- General Div to hold everything -->
+    <div>
+        <!-- Page title -->
+        <div id="practiceTitle">
+            <h1>Practice!</h1>
+        </div>
+        <!-- Instructions -->
+        <div id="practiceInstructions">
+            <p>Try to recall the definition of the word shown on screen. Click on the word to show its definition. If you got it right, click on "Got it!" to remove it from your stack and move on to the next word. If not, click on "Keep practicing" to keep in your stack and move to the next word.</p>
+            <p>Whenever you like, click on "Beginning" to move to the first word to practice any remaining words, or click on "Start Over" to practice all the words over again.</p>
+        </div>
+
+        <!-- Div for word -->
+        <div id="wordDiv"></div>
+
+        <!-- Div for definition -->
+        <div id="wordDefDiv"></div>
+
+        <!-- Buttons -->
+        <button id="btnBegin">Beginning</button>
+        <button id="btnGotIt">Got it!</button>
+        <button id="btnKeep">Keep practicing</button>
+        <button id="btnNext">Next</button>
+
+        <!-- Hold total count of cards in stack -->
+        <div id="wordCountDiv"></div>
+
+        <!-- Holds count of words learned -->
+        <div id="wordLearnedDiv"></div>
+
+        <!-- Button to start over -->
+        <button id="btnStartOver">Start Over</button>
+        
+    </div>
+    
+    <!-- Scripts for JQuery and JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/javascript/logic.js"></script> 
+</body>
+
+<footer>
+    <p>Copyright &copy; 2018</p>
+</footer>
+</html>
