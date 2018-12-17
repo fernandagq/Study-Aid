@@ -52,12 +52,10 @@ function loadPractice() {
     $("#wordCountDiv").text(wordArray.length);
     $("#wordLearnedDiv").text(wordLearned)
 
-    console.log(wordArray);
 }; // End of loadPractice function
 
 // WHEN user clicks on the word
 $(this).on("click", "#wordDiv", function() {
-    console.log(stackEnded);
     if (stackEnded == false) {
         $("#wordDefDiv").show();
     }
@@ -97,7 +95,6 @@ function nextWord() {
             $("#wordDefDiv").text(wordArray[outerIndex][defIndex]).hide();
         }
     }
-    console.log("Next: " + outerIndex);
 }
 
 $(this).on("click", "#btnNext", function() {
@@ -112,8 +109,6 @@ $(this).on("click", "#btnGotIt", function() {
         endStack();
     } else if (wordArray.length > 0) {
         wordArray.splice(outerIndex, 1);
-        console.log(wordArray);
-        console.log("GotIt: " + outerIndex);
         $("#wordCountDiv").text(wordArray.length);
         wordLearned++;
         $("#wordLearnedDiv").text(wordLearned);
