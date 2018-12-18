@@ -1,11 +1,12 @@
-var storageInfoG= [];
-var wordG=[];
+var storageInfoG;
+
+var word;
 // var individualDefs=[];
 // var word;
 function displaySearchTerm(){
 
     
-    var word= $("#term-input").val().trim();
+    word= $("#term-input").val().trim();
     console.log(word);
     var key= "?key=1f40dde8-50d6-4eb6-9168-6f465c469eb9";
     
@@ -21,11 +22,12 @@ for (var i=0; i<results.length; i++) {
     console.log(response[i]);
     var term= response[i].shortdef[0]; //word definition
     
-if (response[i].fl===("noun")){
-
     
+if (response[i].fl===("noun")){
+    for (var i=0; i<results.length; i++){
+    storageInfoG=[];
     storageInfoG.push(term);
-    wordG.push(word);
+    }
     // localStorage.clear();
 
     var termDiv = $("<div>");
@@ -55,8 +57,9 @@ if (response[i].fl===("noun")){
 
 }
 $(".save").on("click", function(event){
+    
 
-    localStorage.setItem(wordG , JSON.stringify([storageInfoG]));
+    localStorage.setItem(word, JSON.stringify(storageInfoG));
     // localStorage.setItem("Terms: " , JSON.stringify(storageInfoG));
     
  }); //end of click listener
