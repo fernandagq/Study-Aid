@@ -1,0 +1,23 @@
+.inputBackground {
+    background-color: #1DA1F2;
+}
+
+#term-input {
+    background-color: #F5F8FA;
+    color: black;
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: Cambo-Regular;
+    src: url("../fonts/Cambo-Regular.otf");
+}
+
+* {
+    font-family: Cambo-Regular;
+}
+
+.searchWord {
+    font-family: Cambo-Regular;
+    font-size: 36px;
+}

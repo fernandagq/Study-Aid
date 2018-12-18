@@ -7,20 +7,43 @@
         <!-- Favicon source: https://iconmonstr.com/book-17-png/ -->
         <link rel="icon" href="./assets/images/favicon.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
         <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
-        <form id="input">
-            <label for="term-input">Search term:</label>
-            <input type="text" id="term-input">
-            <input id="add-definition" type="submit"
-            value="Search" class="search">
-        </form>
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a href="">Home</a></li>
+                    <li class="uk-parent"><a href="">Flash Chards</a></li>
+                    <li class="uk-parent"><a href="./practice.html">Practice!</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="uk-section uk-light inputBackground">
+            <div class="uk-container">
+                <form id="input" class="uk-form">
+                    <div class="uk-align-center">
+                        <label for="term-input" class="uk-form-label searchWord">Look up a word</label>
+                    </div>
+                    <div class="uk-align-center">
+                        <input type="text" id="term-input" class="uk-input uk-form-width-large">
+                        <input id="add-definition" type="submit" value="Search" class="search uk-button uk-button-default">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- DEFINITION divs go here -->
         <div id="definition"></div>
 
-        <!-- PRONUNCIATION div goes here -->
+        <!-- IMAGE divs go here -->
+
+        <!-- PRONUNCIATION divs go here -->
         <div>
             <h1>Pronunciation</h1>
             <!-- Div to show pronunciation stuff -->
