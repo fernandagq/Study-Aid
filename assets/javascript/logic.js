@@ -39,10 +39,15 @@ function displayPronunciation() {
                     console.log(prsArray.length);
                     var wordArray = [];
                     if (prsArray[j].sound == undefined) {
-                    } else if ($.inArray(prsArray[j].sound.audio, myArray) !== -1) {
-                        console.log(prsArray[j].sound.audio);
-                        console.log(myArray);
+                        // Skip here if undefined
+                    } else if ((myArray.toString()).includes(prsArray[j].sound.audio) == true) {
+                        console.log(prsArray[j].sound.audio)
+                        console.log(myArray.toString());
+                        console.log(prsArray[j].sound.audio.indexOf(myArray.toString()));
                     } else {
+                        console.log(prsArray[j].sound.audio)
+                        console.log(myArray.toString());
+                        console.log(prsArray[j].sound.audio.indexOf(myArray.toString()));
                         // If it has a sound parameter, grab the written pronunciation and audio file name, and along with flValue, send to myArray
                         var writtenPron = prsArray[j].mw;
                         var audioPron = prsArray[j].sound.audio;
