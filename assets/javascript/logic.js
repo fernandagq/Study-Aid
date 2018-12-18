@@ -93,7 +93,7 @@ function displayPronunciation() {
 
 $(".search").on("click", function(event){
     event.preventDefault();
-    var word= $("#term-input").val().trim();
+    var word = $("#term-input").val().trim();
     displayPronunciation();
 
 }); // End of search button click function
