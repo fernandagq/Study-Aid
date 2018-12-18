@@ -57,11 +57,12 @@
         $(".search").on("click", function(event){
             event.preventDefault();
             var word= $("#term-input").val().trim();
-            // displaySearchTerm();
+            displaySearchTerm();
+            // displayPronunciation();
             console.log(word);
         });
 
-        // $(document).on("click", ".search", displaySearchTerm);
+        $(document).on("click", ".search", displaySearchTerm);
         </script>
         <script src="./assets/javascript/logic.js"></script>
     </body>
