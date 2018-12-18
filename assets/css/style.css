@@ -1,5 +1,13 @@
+i, em {
+    font-style: italic;
+}
+
 .inputBackground {
-    background-color: #1DA1F2;
+    background-color: #303481;
+}
+
+#navLogo {
+    height: 100px;
 }
 
 #term-input {
@@ -8,16 +16,37 @@
     font-size: 20px;
 }
 
+
+
 @font-face {
-    font-family: Cambo-Regular;
-    src: url("../fonts/Cambo-Regular.otf");
+    font-family: "Andada";
+    src: url("../fonts/Andada-Bold.otf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Andada";
+    src: url("../fonts/Andada-Italic.otf");
+    font-style: italic, oblique;
+}
+@font-face {
+    font-family: "Andada";
+    src: url("../fonts/Andada-BoldItalic.otf");
+    font-weight: bold;
+    font-style: italic, oblique;
+}
+
+@font-face {
+    font-family: "Andada";
+    src: url("../fonts/Andada-Regular.otf");
+    font-weight: normal;
+    font-style: normal;
 }
 
 * {
-    font-family: Cambo-Regular;
+    font-family: Andada;
 }
 
 .searchWord {
-    font-family: Cambo-Regular;
+    font-family: Andada;
     font-size: 36px;
 }
