@@ -1,6 +1,8 @@
 
 
 var word;
+var scapeCounter = localStorage.length; // Rafael: populate counter
+$("#stackCounter").html(scapeCounter);
 
 function displaySearchTerm(){
 
@@ -29,7 +31,7 @@ if (response[i].fl!=("idiom")){
 
     var termDiv = $("<div>");
     var p= $("<p>");
-    p.text(word + ": " + term);
+    p.text(term);  //Rafael: trying this without word
 
     termDiv.append(p);
     $("#definition").append(termDiv);
@@ -53,6 +55,11 @@ $(".save").on("click", function(event){
     var newDef=[];
     newDef.push(ownDef);
     localStorage.setItem(word, ownDef);
+    $("#ownDefinition").val(""); // Added by Rafael to clear out textarea box after Save is clicked
+    scapeCounter = localStorage.length;
+    console.log(scapeCounter);
+    $("#stackCounter").html(scapeCounter);
+    $("#stackCounter").addClass(uk-animation-shake);
     // localStorage.setItem("Terms: " , JSON.stringify(storageInfoG));
     }
  }); //end of click listener
