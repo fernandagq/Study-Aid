@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 
 
+
 // ********** LOGIC FOR PRONUNCIATION **********
 var myArray = [];
 
@@ -47,12 +48,6 @@ function displayPronunciation() {
 
         // Create Divs for each item in myArray
         for (var i=0; i < myArray.length; i++) {
-            var dAudio = $("<div>").addClass("audioDiv");
-            var dPron = $("<div>").addClass("pronDiv");
-            var dPos = $("<div>").addClass("posDiv");
-            var dPronGroup = $("<div>").addClass("pronGroupDiv");
-            var p = $("<p>");
-            var a = $("<a>");
             var pos = myArray[i][0];
             var pron = myArray[i][1];
             var file = myArray[i][2];
@@ -79,14 +74,21 @@ function displayPronunciation() {
                     return false; 
                 }
             }
+            var dDefault = $("<div>").addClass("uk-card").addClass("uk-card-default");
+            var dBody = $("<div>").addClass("uk-card-body");
+            var h = $("<h3>").addClass("uk-card-title");
+            var p = $("<p>").addClass("partofspeech");
+            var dBottom = $("<div>").addClass("uk-card-media-bottom");
             var url = "https://media.merriam-webster.com/soundc11/" + subDir + "/" + file + ".wav";
-            dAudio.append("<audio id=\"embed_player\" src=" + url + " autostart=\"false\" controls=\"true\"></audio>");
-            dPron.append(pron);
-            dPos.append(pos);
-            dPronGroup.prepend(dAudio);
-            dPronGroup.prepend(dPron);
-            dPronGroup.prepend(dPos);
-            $("#pronunciations").append(dPronGroup);
+            h.text(pron);
+            p.text(pos);
+            dBody.append(h);
+            dBody.append(p);
+            dDefault.append(dBody);
+            dBottom.append("<audio id=\"embed_player\" src=" + url + " autostart=\"false\" controls=\"true\"></audio>");
+            dDefault.append(dBottom);
+            $("#pronunciations").append("<hr>");
+            $("#pronunciations").append(dDefault);
         } // End of for myArray.length statement       
     }); // End of Ajax function
 } // End of displayPronunciation function
@@ -95,7 +97,6 @@ $(".search").on("click", function(event){
     event.preventDefault();
     var word = $("#term-input").val().trim();
     displayPronunciation();
-
 }); // End of search button click function
 
 
@@ -208,13 +209,6 @@ $(this).on("click", "#btnGotIt", function() {
         wordLearned++;
         $("#wordLearnedDiv").text(wordLearned);
         outerIndex--;
-        nextWord();
-    }
-});
-
-// WHEN user clicks on KeepPracticing button
-$(this).on("click", "#btnKeep", function() {
-    if (outerIndex < wordArray.length) {
         nextWord();
     }
 });

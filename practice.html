@@ -8,42 +8,75 @@
     <!-- Favicon source: https://iconmonstr.com/book-17-png/ -->
     <link rel="icon" href="./assets/images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>      
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
 </head>
 <body>
+        <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-left">
+                    <img id="navLogo" src="./assets/images/logo.png" alt="Wordscape logo">
+                </div>
+                <div class="uk-navbar-right">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-parent"><a href="./index.html">Home</a></li>
+                        <li class="uk-parent"><a href="">Scape &#8226; Stack</a></li>
+                        <li class="uk-active"><a href="">Practice!</a></li>
+                    </ul>
+                </div>
+            </nav>
+
     <!-- General Div to hold everything -->
-    <div>
-        <!-- Page title -->
-        <div id="practiceTitle">
-            <h1>Practice!</h1>
+    <div class="uk-container">
+        <!-- Word and definition -->
+        <div>
+            <!-- Word -->
+            <div class="uk-card uk-card-default uk-card-large uk-card-body uk-width-1-2 uk-align-center">
+                <h3 id="wordDiv" class="uk-card-title"></h3>
+            </div>
+            <hr class="uk-width-1-2 uk-align-center">
+            <!-- Definition -->
+            <div class="uk-card uk-card-default uk-card-large uk-card-body uk-width-1-2 uk-align-center">
+                <h3 id="wordDefDiv" class="uk-card-title"></h3>
+            </div>
         </div>
-        <!-- Instructions -->
-        <div id="practiceInstructions">
-            <p>Try to recall the definition of the word shown on screen. Click on the word to show its definition. If you got it right, click on "Got it!" to remove it from your stack and move on to the next word. If not, click on "Keep practicing" to keep in your stack and move to the next word.</p>
-            <p>Whenever you like, click on "Beginning" to move to the first word to practice any remaining words, or click on "Start Over" to practice all the words over again.</p>
+
+        <!-- Whole panel -->
+        <div class="uk-width-1-2 uk-align-center">
+            <!-- Controls -->
+            <div>
+                <!-- Beginning -->
+                <div class="uk-align-left">
+                    <button id="btnBegin" class="uk-button uk-button-default uk-button-large">Beginning</button>
+                </div>
+                <!-- Got it -->
+                <div>
+                    <button id="btnGotIt" class="uk-button uk-button-primary uk-button-large uk-align-center">Got it!</button>
+                </div>
+                <!-- Next -->
+                <div>
+                    <button id="btnNext" class="uk-button uk-button-default uk-button-large uk-align-right">Next</button>
+                </div>
+            </div>
+
+            <!-- Scores -->
+            <div>
+                <!-- Stack -->
+                <div id="wordCountDiv">
+
+                </div>
+                <!-- Learned -->
+                <div id="wordLearnedDiv">
+
+                </div>
+                <!-- Start over -->
+                <div>
+                    <button id="btnStartOver">Start Over</button>
+                </div>
+            </div>
+
         </div>
-
-        <!-- Div for word -->
-        <div id="wordDiv"></div>
-
-        <!-- Div for definition -->
-        <div id="wordDefDiv"></div>
-
-        <!-- Buttons -->
-        <button id="btnBegin">Beginning</button>
-        <button id="btnGotIt">Got it!</button>
-        <button id="btnKeep">Keep practicing</button>
-        <button id="btnNext">Next</button>
-
-        <!-- Hold total count of cards in stack -->
-        <div id="wordCountDiv"></div>
-
-        <!-- Holds count of words learned -->
-        <div id="wordLearnedDiv"></div>
-
-        <!-- Button to start over -->
-        <button id="btnStartOver">Start Over</button>
         
     </div>
     
@@ -52,7 +85,4 @@
     <script src="./assets/javascript/logic.js"></script>
 </body>
 
-<footer>
-    <p>Copyright &copy; 2018</p>
-</footer>
 </html>

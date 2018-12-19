@@ -1,0 +1,102 @@
+body {
+    background-color: whitesmoke;
+}
+
+h1 {
+    font-family: Andada;
+    font-size: 24px;
+}
+
+.uk-card-title {
+    font-size: 34px;
+}
+
+.uk-button-primary {
+    background-color: #303481;
+}
+
+.partofspeech {
+    font-style: italic;
+}
+
+i, em {
+    font-style: italic;
+}
+
+.inputBackground {
+    background-color: #303481;
+}
+
+.uk-card {
+    text-align: center;
+}
+
+.searchWord {
+    font-family: Andada;
+    font-size: 36px;
+}
+
+#save-term {
+    text-transform: none;
+    font-size: 22px;
+}
+
+#definition {
+    font-family: Andada;
+    font-size: 18px;
+    color: black;
+    text-indent: 2em;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+#navLogo {
+    height: 100px;
+}
+
+#term-input {
+    font-family: Helvetica, sans-serif;
+    background-color: #F5F8FA;
+    color: black;
+    font-size: 20px;
+}
+
+/* Practice Page */
+
+#wordDiv {
+    font-size: 48px;
+}
+
+#wordDefDiv {
+    font-size: 36px;
+}
+
+/* Fonts */
+@font-face {
+    font-family: "Andada";
+    src: url("../fonts/Andada-Bold.otf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Andada";
+    src: url("../fonts/Andada-Italic.otf");
+    font-style: italic, oblique;
+}
+@font-face {
+    font-family: "Andada";
+    src: url("../fonts/Andada-BoldItalic.otf");
+    font-weight: bold;
+    font-style: italic, oblique;
+}
+
+@font-face {
+    font-family: "Andada";
+    src: url("../fonts/Andada-Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: Andada;
+}
+
