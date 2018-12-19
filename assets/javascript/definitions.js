@@ -1,8 +1,7 @@
-var storageInfoG;
+
 
 var word;
-// var individualDefs=[];
-// var word;
+
 function displaySearchTerm(){
 
     
@@ -23,10 +22,8 @@ for (var i=0; i<results.length; i++) {
     var term= response[i].shortdef; //word definition
     
     
-if (response[i].fl==("noun")){
+if (response[i].fl!=("idiom")){
     for (var i=0; i<response.length; i++){
-    storageInfoG=[];
-    storageInfoG.push(term);
     }
     // localStorage.clear();
 
@@ -39,31 +36,27 @@ if (response[i].fl==("noun")){
 
 
     var input = $("#term-input").val("");
-    
 
-//     for (var i=0; i<results.length; i++) {
-    
-//     individualDefs.push(word + ": " + term);
-
-// }
 
 };        
-
 
 }
 });
 
 }
+
 $(".save").on("click", function(event){
     
+    var ownDef= $("#ownDefinition").val().trim();
+    for (var i=0; i<ownDef.length; i++){
 
-    localStorage.setItem(word, JSON.stringify(storageInfoG));
+    var newDef=[];
+    newDef.push(ownDef);
+    localStorage.setItem(word, ownDef);
     // localStorage.setItem("Terms: " , JSON.stringify(storageInfoG));
-    
+    }
  }); //end of click listener
-   
 
-// here
 
 $(".search").on("click", function(event){
    
