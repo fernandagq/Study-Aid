@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="googlesearchapi.js"></script>
+  <title>Document</title>
+</head>
+<body>
+        <button onclick="loadClient()">load</button>
+        <button onclick="execute()">execute</button>
+    <button onclick="myFunction()">Print this page</button>
+
+<script>
+function myFunction() {
+  window.print();
+}
+</script>
+<br>
+
+<br>
+<div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div>
+        <div class="table1"></div>
+    </div>
+    <div>
+        <div class="table1"></div>
+    </div>
+    <div>
+        <div class="table1"></div>
+    </div>
+</div>
+<br>
+<div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div>
+        <div class="table1"></div>
+    </div>
+    <div>
+        <div class="table1"></div>
+    </div>
+    <div>
+        <div class="table1"></div>
+    </div>
+</div>
+<div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div>
+        <div class="table1"></div>
+    </div>
+    <div>
+        <div class="table1"></div>
+    </div>
+    <div>
+        <div class="table1"></div>
+    </div>
+</div>
+<div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div>
+        <div class="table1"></div>
+    </div>
+    <div>
+        <div class="table1"></div>
+    </div>
+    <div>
+        <div class="table1"></div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    var container = $("<div>").addClass("uk-container uk-container-medium");
+    var flashcards = $( "<div>" ).addClass( "uk-card uk-card-secondary uk-card-body" );
+    var columns = $( "<div>").addClass( "uk-column-1-3");
+    var grid  = $( "<div>").addClass("uk-child-width-1@m uk-grid-medium");
+
+    var tag= $("<h3>").addClass("uk-card-title").text("Word");
+    var definition = $("<p>").addClass(".uk-text-justify").text(" venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse  ");
+    container.append(columns).append(grid).append(flashcards);
+    flashcards.append(tag);
+    flashcards.append(definition);
+    $(".table1").append(container);
+    
+  </script>
+
+  
+
+
+</body>
+</html>
