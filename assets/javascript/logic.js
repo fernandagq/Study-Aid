@@ -159,6 +159,7 @@ function loadPractice() {
 $(this).on("click", "#wordDiv", function() {
     if (stackEnded == false) {
         $("#wordDefDiv").show();
+        $("#wordDefDiv").addClass("uk-animation-scale-up");
     }
 });
 
