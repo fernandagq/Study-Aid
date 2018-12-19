@@ -62,13 +62,26 @@ i, em {
 }
 
 /* Practice Page */
-
+h4 {
+    color: #303481;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
 #wordDiv {
     font-size: 48px;
 }
 
 #wordDefDiv {
     font-size: 36px;
+}
+
+#wordCountDiv {
+    font-size: 40px;
+}
+
+#wordLearnedDiv {
+    font-size: 40px;
+    font-style: italic;
 }
 
 /* Fonts */

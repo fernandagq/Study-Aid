@@ -175,7 +175,7 @@ $(this).on("click", "#btnBegin", function() {
 });
 
 function endStack() {
-    var endOfStack = "You've reached the end of the stack. Click <b>Beginning</b> to practice any remaining words, or click <b>Start Over</b> to practice all words over again."
+    var endOfStack = "— End of stack. —"
     $("#wordDiv").html(endOfStack);
     $("#wordDefDiv").hide();
     stackEnded = true;
