@@ -14,18 +14,18 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
 </head>
 <body>
-        <nav class="uk-navbar-container" uk-navbar>
-                <div class="uk-navbar-left">
-                    <img id="navLogo" src="./assets/images/logo.png" alt="Wordscape logo">
-                </div>
-                <div class="uk-navbar-right">
-                    <ul class="uk-navbar-nav">
-                        <li class="uk-parent"><a href="./index.html">Home</a></li>
-                        <li class="uk-parent"><a href="">Scape &#8226; Stack</a></li>
-                        <li class="uk-active"><a href="">Practice!</a></li>
-                    </ul>
-                </div>
-            </nav>
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <img id="navLogo" src="./assets/images/logo.png" alt="Wordscape logo">
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+                <li class="uk-parent"><a href="./index.html">Home</a></li>
+                <li class="uk-parent"><a href="">Scape &#8226; Stack</a></li>
+                <li class="uk-active"><a href="">Practice!</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- General Div to hold everything -->
     <div class="uk-container">
@@ -37,48 +37,57 @@
             </div>
             <hr class="uk-width-1-2 uk-align-center">
             <!-- Definition -->
-            <div class="uk-card uk-card-default uk-card-large uk-card-body uk-width-1-2 uk-align-center">
+            <div class="uk-card uk-card-default uk-card-large uk-card-body uk-width-1-2 uk-align-center defDiv">
                 <h3 id="wordDefDiv" class="uk-card-title"></h3>
             </div>
         </div>
-
-        <!-- Whole panel -->
-        <div class="uk-width-1-2 uk-align-center">
-            <!-- Controls -->
-            <div>
-                <!-- Beginning -->
-                <div class="uk-align-left">
-                    <button id="btnBegin" class="uk-button uk-button-default uk-button-large">Beginning</button>
-                </div>
-                <!-- Got it -->
-                <div>
-                    <button id="btnGotIt" class="uk-button uk-button-primary uk-button-large uk-align-center">Got it!</button>
-                </div>
-                <!-- Next -->
-                <div>
-                    <button id="btnNext" class="uk-button uk-button-default uk-button-large uk-align-right">Next</button>
-                </div>
-            </div>
-
-            <!-- Scores -->
-            <div>
-                <!-- Stack -->
-                <div id="wordCountDiv">
-
-                </div>
-                <!-- Learned -->
-                <div id="wordLearnedDiv">
-
-                </div>
-                <!-- Start over -->
-                <div>
-                    <button id="btnStartOver">Start Over</button>
-                </div>
-            </div>
-
-        </div>
-        
     </div>
+
+    <!-- Control panel -->
+    <div class="uk-container uk-width-1-2">
+        <div class="uk-text-center" uk-grid>
+            <!-- Beginning -->
+            <div class="uk-width-1-3 stackButtonDiv">
+                <img id="btnBegin" src="./assets/images/beginning.png" alt="Beginning">
+            </div>
+            <!-- Got it -->
+            <div class="uk-width-1-3 stackButtonDiv">
+                <img id="btnGotIt" src="./assets/images/gotit.png" alt="Got it!">
+            </div>
+            <!-- Next -->
+            <div class="uk-width-1-3 stackButtonDiv">
+                <img id="btnNext" src="./assets/images/next.png" alt="Next">
+            </div>
+        </div>  
+    </div>
+
+    <!-- Scores -->
+    <div class="uk-container uk-width-1-2">
+        <br><hr>
+        <div class="uk-text-center" uk-grid>
+            <!-- Stack -->
+            <div class="uk-width-1-3">
+                <h4>Scape &#8226; Stack</h4>
+                <p id="wordCountDiv"></p>
+            </div>
+            <!-- Learned -->
+            <div class="uk-width-1-3">
+                <h4>Learned</h4>
+                <p id="wordLearnedDiv"></p>
+            </div>
+            <!-- Start over -->
+            <div class="uk-width-1-3">
+                <img id="btnStartOver" src="./assets/images/startover.png" alt="Start over">
+            </div>
+        </div>
+        <div>
+            <br><br>
+        </div>
+    </div>
+
+        
+        
+    
     
     <!-- Scripts for JQuery and JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

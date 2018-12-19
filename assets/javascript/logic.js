@@ -13,6 +13,11 @@ function displayPronunciation() {
     var word= $("#term-input").val().trim();
     var key= "?key=1f40dde8-50d6-4eb6-9168-6f465c469eb9";
     var queryUrl= "http://www.dictionaryapi.com/api/v3/references/collegiate/json/";
+    
+    // Clear out divs and arrays
+    $("#pronunciations").empty();
+    myArray = [];
+
     // Send query to Ajax
     $.ajax({
         url: queryUrl + word + key,
@@ -154,6 +159,7 @@ function loadPractice() {
 $(this).on("click", "#wordDiv", function() {
     if (stackEnded == false) {
         $("#wordDefDiv").show();
+        $("#wordDefDiv").addClass("uk-animation-scale-up");
     }
 });
 
@@ -170,7 +176,7 @@ $(this).on("click", "#btnBegin", function() {
 });
 
 function endStack() {
-    var endOfStack = "You've reached the end of the stack. Click <b>Beginning</b> to practice any remaining words, or click <b>Start Over</b> to practice all words over again."
+    var endOfStack = "— End of stack. —"
     $("#wordDiv").html(endOfStack);
     $("#wordDefDiv").hide();
     stackEnded = true;
