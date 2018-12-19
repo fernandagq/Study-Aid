@@ -89,7 +89,6 @@ function displayPronunciation() {
             dDefault.append(dBottom);
             $("#pronunciations").append("<hr>");
             $("#pronunciations").append(dDefault);
-            
         } // End of for myArray.length statement       
     }); // End of Ajax function
 } // End of displayPronunciation function
@@ -98,7 +97,6 @@ $(".search").on("click", function(event){
     event.preventDefault();
     var word = $("#term-input").val().trim();
     displayPronunciation();
-
 }); // End of search button click function
 
 
@@ -211,13 +209,6 @@ $(this).on("click", "#btnGotIt", function() {
         wordLearned++;
         $("#wordLearnedDiv").text(wordLearned);
         outerIndex--;
-        nextWord();
-    }
-});
-
-// WHEN user clicks on KeepPracticing button
-$(this).on("click", "#btnKeep", function() {
-    if (outerIndex < wordArray.length) {
         nextWord();
     }
 });

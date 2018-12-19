@@ -61,6 +61,17 @@ i, em {
     font-size: 20px;
 }
 
+/* Practice Page */
+
+#wordDiv {
+    font-size: 48px;
+}
+
+#wordDefDiv {
+    font-size: 36px;
+}
+
+/* Fonts */
 @font-face {
     font-family: "Andada";
     src: url("../fonts/Andada-Bold.otf");
