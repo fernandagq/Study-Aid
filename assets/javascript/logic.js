@@ -106,35 +106,24 @@ $(".search").on("click", function(event){
 
 
 // ********** LOGIC FOR PRACTICE.HTML **********
-var wordArray = [
-    ["apple", "red shiny thing"],
-    ["banana", "yellow matte thing"],
-    ["yogurt", "berry gooey thing"],
-    ["soda", "sticky drink thing"],
-    ["taco", "foldable edible thing"],
-    ["chai", "spicy beverage"],
-    ];
+var wordArray = [];
 var wordLearned = 0;
 var outerIndex = 0;
 var wordIndex = 0;
 var defIndex = 1;
 var stackEnded = false;
 
+// Grab words and definitions from local storage and push to array
 function popArray() {
-    wordArray = [
-        ["apple", "red shiny thing"],
-        ["banana", "yellow matte thing"],
-        ["yogurt", "berry gooey thing"],
-        ["soda", "sticky drink thing"],
-        ["taco", "foldable edible thing"],
-        ["chai", "spicy beverage"],
-        ];
+    wordArray = [];
+    for (i=0; i < localStorage.length; i++) {
+        var word = localStorage.key(i);
+        var def = localStorage.getItem(word);
+        wordArray.push([word, def]);
+    }
 }
 
 function loadPractice() {
-    // Load an array with words and definitions from local storage
-    // ******* NEED LOCAL STORAGE FOR THIS PART *******
-
     wordLearned = 0;
     outerIndex = 0;
     popArray();
@@ -209,6 +198,8 @@ $(this).on("click", "#btnNext", function() {
 $(this).on("click", "#btnGotIt", function() {
     if (wordArray.length == 0) {
         endStack();
+    } else if (wordLearned == wordArray.length + 1) {
+        // Do nothing 
     } else if (wordArray.length > 0) {
         wordArray.splice(outerIndex, 1);
         $("#wordCountDiv").text(wordArray.length);
