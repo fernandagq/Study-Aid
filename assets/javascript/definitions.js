@@ -50,9 +50,6 @@ if (response[i].fl==("noun")){
 };        
 
 
-
-
-
 }
 });
 
