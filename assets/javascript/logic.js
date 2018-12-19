@@ -13,6 +13,11 @@ function displayPronunciation() {
     var word= $("#term-input").val().trim();
     var key= "?key=1f40dde8-50d6-4eb6-9168-6f465c469eb9";
     var queryUrl= "http://www.dictionaryapi.com/api/v3/references/collegiate/json/";
+    
+    // Clear out divs and arrays
+    $("#pronunciations").empty();
+    myArray = [];
+
     // Send query to Ajax
     $.ajax({
         url: queryUrl + word + key,
