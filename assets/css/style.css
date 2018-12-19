@@ -31,6 +31,11 @@ i, em {
     text-align: center;
 }
 
+.searchWord {
+    font-family: Andada;
+    font-size: 36px;
+}
+
 #save-term {
     text-transform: none;
     font-size: 22px;
@@ -40,6 +45,9 @@ i, em {
     font-family: Andada;
     font-size: 18px;
     color: black;
+    text-indent: 2em;
+    margin-top: 10px;
+    text-align: justify;
 }
 
 #navLogo {
@@ -81,7 +89,3 @@ i, em {
     font-family: Andada;
 }
 
-.searchWord {
-    font-family: Andada;
-    font-size: 36px;
-}
