@@ -20,11 +20,11 @@ $.ajax({
     var results= response;
 for (var i=0; i<results.length; i++) {
     console.log(response[i]);
-    var term= response[i].shortdef[0]; //word definition
+    var term= response[i].shortdef; //word definition
     
     
-if (response[i].fl===("noun")){
-    for (var i=0; i<results.length; i++){
+if (response[i].fl==("noun")){
+    for (var i=0; i<response.length; i++){
     storageInfoG=[];
     storageInfoG.push(term);
     }
@@ -39,6 +39,7 @@ if (response[i].fl===("noun")){
 
 
     var input = $("#term-input").val("");
+    
 
 //     for (var i=0; i<results.length; i++) {
     
