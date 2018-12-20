@@ -94,7 +94,8 @@ h4 {
 }
 
 #wordDefDiv {
-    font-size: 36px;
+    text-align: left;
+    font-size: 28px;
 }
 
 #wordCountDiv {
