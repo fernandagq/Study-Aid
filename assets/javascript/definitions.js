@@ -25,8 +25,23 @@ $.ajax({
     var termTwo = response[0].shortdef[1];
     var termThree = response[0].shortdef[2];
     var thermFour = response[0].shortdef[3];
-    
-if (response[i].fl!=("idiom")){
+
+if (response[i] == undefined) {
+    var termDiv = $("<div>");
+    var p= $("<p>");
+    p.text(term);  
+    var pTwo= $("<p>")
+    pTwo.text(termTwo);
+    var pThree= $("<p>");
+    pThree.text(termThree);
+    var pFour=$("<p>");
+    pFour=$("<p>");
+    termDiv.append(p, pTwo, pThree, pFour);
+    $("#definition").append(termDiv);
+
+
+    var input = $("#term-input").val("");
+} else if (response[i].fl!=("idiom")){
     // for (var i=0; i<response.length; i++){
     // }
     // localStorage.clear();
@@ -47,7 +62,8 @@ if (response[i].fl!=("idiom")){
     var input = $("#term-input").val("");
 
 
-};        
+};
+  
 
 // }
 });
