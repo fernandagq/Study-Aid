@@ -51,7 +51,7 @@ function displayPronunciation() {
     // Grab the term from the input form
     var word= $("#term-input").val().trim();
     var key= "?key=1f40dde8-50d6-4eb6-9168-6f465c469eb9";
-    var queryUrl= "http://www.dictionaryapi.com/api/v3/references/collegiate/json/";
+    var queryUrl= "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
     
     // Clear out divs and arrays
     $("#pronunciations").empty();
