@@ -7,6 +7,24 @@ h1 {
     font-size: 24px;
 }
 
+p {
+    font-size: 18px
+}
+
+.footer {
+    padding: 10px 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #303481;
+    height: 15px;
+    border-top: 4px solid #F5F8FA;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+}
+
 .uk-card-title {
     font-size: 34px;
 }

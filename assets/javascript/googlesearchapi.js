@@ -1,30 +1,27 @@
+var word;
 
-  /**
-   * Sample JavaScript code for search.cse.siterestrict.list
-   * See instructions for running APIs Explorer code samples locally:
-   * https://developers.google.com/explorer-help/guides/code_samples#javascript
-   */
-      var googlesearchapi = "key=AIzaSyAqX99HxyrNA1N863dK4Otpc4QGFYPSaCE";
+function displaySearchImage(){
+    word= $("#term-input").val().trim();
+    var key= "?key=11051593-a4e6d6adfc2d65d6b9612b399&q";
+    var queryUrl= "https://pixabay.com/api/";
+    $("#image").empty();
+    $.ajax({
+        url: queryUrl + key + "&q=" + word + "&",
+        method:"GET"
+    }).then(function(response){
 
-  function loadClient() {
-    gapi.client.setApiKey(googlesearchapi);
-    return gapi.client.load("https://crossorigin.mehttps://content.googleapis.com/discovery/v1/apis/customsearch/v1/rest")
-        .then(function() { console.log("GAPI client loaded for API"); },
-              function(err) { console.error("Error loading GAPI client for API", err); });
-  }
-  // Make sure the client is loaded before calling this method.
-  function execute() {
-    return gapi.client.search.cse.siterestrict.list({
-      "q": "cheetah",
-      "cx": "001117967465507105530:wwvqelhmlxk",
-      "num": 10,
-      "safe": "off"
-    })
-        .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              },
-              function(err) { console.error("Execute error", err); });
-  }
-  gapi.load("client");
+    var imagess = $("<img>").attr("src", response.hits[0].largeImageURL);
+    $("#image").empty();
+    $("#image").append(imagess);
 
+    var results = response;
+    console.log(response);
+
+});
+}
+
+$(".search").on("click", function(event){
+  event.preventDefault();
+  var word= $("#term-input").val().trim();
+  displaySearchImage();
+});
