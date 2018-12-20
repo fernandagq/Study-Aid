@@ -78,6 +78,20 @@ i, em {
     font-size: 20px;
 }
 
+/* Scape Stack Page */
+.stackWord {
+    font-family: Andada;
+}
+
+.stackDef {
+    text-align: left;
+    font-family: Andada;
+}
+
+.stackHr {
+    margin-top: 20px;
+}
+
 /* Practice Page */
 h4 {
     color: #303481;
@@ -94,7 +108,8 @@ h4 {
 }
 
 #wordDefDiv {
-    font-size: 36px;
+    text-align: left;
+    font-size: 28px;
 }
 
 #wordCountDiv {
