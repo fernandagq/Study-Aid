@@ -19,21 +19,28 @@ $.ajax({
     method:"GET"
 }).then(function(response){
     var results= response;
-for (var i=0; i<results.length; i++) {
-    console.log(response[i]);
-    var term= response[i].shortdef; //word definition
-    
+    console.log(response);
+// for (var i=0; i<results.length; i++) {
+    var term = response[0].shortdef[0]; 
+    var termTwo = response[0].shortdef[1];
+    var termThree = response[0].shortdef[2];
+    var thermFour = response[0].shortdef[3];
     
 if (response[i].fl!=("idiom")){
-    for (var i=0; i<response.length; i++){
-    }
+    // for (var i=0; i<response.length; i++){
+    // }
     // localStorage.clear();
 
     var termDiv = $("<div>");
     var p= $("<p>");
-    p.text(term);  //Rafael: trying this without word
-
-    termDiv.append(p);
+    p.text(term);  
+    var pTwo= $("<p>")
+    pTwo.text(termTwo);
+    var pThree= $("<p>");
+    pThree.text(termThree);
+    var pFour=$("<p>");
+    pFour=$("<p>");
+    termDiv.append(p, pTwo, pThree, pFour);
     $("#definition").append(termDiv);
 
 
@@ -42,7 +49,7 @@ if (response[i].fl!=("idiom")){
 
 };        
 
-}
+// }
 });
 
 }
