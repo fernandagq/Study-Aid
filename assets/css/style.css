@@ -41,6 +41,14 @@ i, em {
     font-size: 22px;
 }
 
+#stackCounter {
+    font-family: Andada;
+    font-style: italic;
+    font-size: 58px;
+    text-align: left;
+    margin: 15px;
+}
+
 #definition {
     font-family: Andada;
     font-size: 18px;
@@ -48,6 +56,15 @@ i, em {
     text-indent: 2em;
     margin-top: 10px;
     text-align: justify;
+}
+
+#ownDefinition {
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+}
+
+#textarea_feedback {
+    text-align: right;
 }
 
 #navLogo {

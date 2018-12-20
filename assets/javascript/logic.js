@@ -1,8 +1,15 @@
 $(document).ready(function() {
 
+// ********** LOGIC FOR HOME PAGE **********
 
-
-
+// Notifies the user of characters remaining in ownDefinition
+var text_max = 140;
+$("#textarea_feedback").html("Characters remaining: " + text_max);
+$("#ownDefinition").keyup(function() {
+    var text_length = $("#ownDefinition").val().length;
+    var text_remaining = text_max - text_length;
+    $('#textarea_feedback').html("Characters remaining: " + text_remaining);
+});
 
 
 // ********** LOGIC FOR PRONUNCIATION **********
@@ -198,7 +205,7 @@ $(this).on("click", "#btnNext", function() {
 $(this).on("click", "#btnGotIt", function() {
     if (wordArray.length == 0) {
         endStack();
-    } else if (wordLearned == wordArray.length + 1) {
+    } else if (stackEnded == true) {
         // Do nothing 
     } else if (wordArray.length > 0) {
         wordArray.splice(outerIndex, 1);
