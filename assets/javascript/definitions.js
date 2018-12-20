@@ -11,7 +11,7 @@ function displaySearchTerm(){
     console.log(word);
     var key= "?key=1f40dde8-50d6-4eb6-9168-6f465c469eb9";
     
-    var queryUrl= "http://www.dictionaryapi.com/api/v3/references/collegiate/json/";
+    var queryUrl= "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
 $("#definition").empty();
 
 $.ajax({
