@@ -78,6 +78,20 @@ i, em {
     font-size: 20px;
 }
 
+/* Scape Stack Page */
+.stackWord {
+    font-family: Andada;
+}
+
+.stackDef {
+    text-align: left;
+    font-family: Andada;
+}
+
+.stackHr {
+    margin-top: 20px;
+}
+
 /* Practice Page */
 h4 {
     color: #303481;

@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
 // ********** LOGIC FOR HOME PAGE **********
-
 // Notifies the user of characters remaining in ownDefinition
 var text_max = 140;
 $("#textarea_feedback").html("Characters remaining: " + text_max);
@@ -11,6 +10,39 @@ $("#ownDefinition").keyup(function() {
     $('#textarea_feedback').html("Characters remaining: " + text_remaining);
 });
 
+// ********** LOGIC FOR SCAPE-STACK **********
+var stackArray = [];
+var stackWord;
+var stackDef;
+function popStackArray() {
+    stackArray = [];
+    for (i=0; i < localStorage.length; i++) {
+        var stackWord = localStorage.key(i);
+        var stackDef = localStorage.getItem(stackWord);
+        stackArray.push([stackWord, stackDef]);
+    }
+    console.log(stackArray);
+
+    for (i=0; i < stackArray.length; i++) {
+        console.log(stackWord);
+        console.log(stackDef);
+        var stackWord = localStorage.key(i);
+        var stackDef = localStorage.getItem(stackWord);
+        var container = $("#stackGrid");
+        var emptyDiv = $("<div>");
+        var flashcards = $("<div>").addClass("uk-card uk-card-default uk-card-hover uk-card-body");
+        var h = $("<h3>").addClass("uk-card-title stackWord");
+        var p = $("<p>").addClass("stackDef");
+        h.html(stackWord);
+        h.append("<hr class=\"stackHr\">")
+        p.html(stackDef);
+        flashcards.append(h);
+        flashcards.append(p);
+        emptyDiv.append(flashcards);
+        container.append(emptyDiv);
+    }
+}
+popStackArray();
 
 // ********** LOGIC FOR PRONUNCIATION **********
 var myArray = [];
