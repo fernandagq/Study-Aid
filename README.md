@@ -1,4 +1,4 @@
-# Project Title
+# Wordscape
 
 You provide the word, we provide its landscape to help you learn it. Word searches return its definition, images related to the word, and the pronunciation of the word. Users can then create flash cards of their words and practice learning the definitions.
 
