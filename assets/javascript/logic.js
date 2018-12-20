@@ -133,7 +133,8 @@ function displayPronunciation() {
             dDefault.append(dBottom);
             $("#pronunciations").append("<hr>");
             $("#pronunciations").append(dDefault);
-        } // End of for myArray.length statement       
+        } // End of for myArray.length statement
+        $("#pronunciations").append("<br><br><br><br>"); 
     }); // End of Ajax function
 } // End of displayPronunciation function
 
