@@ -1,31 +1,32 @@
-
-
 var word;
-var scapeCounter = localStorage.length; // Rafael: populate counter
+ // Rafael: populate counter
+var scapeCounter = localStorage.length;
 $("#stackCounter").html(scapeCounter);
 
-function displaySearchTerm(){
 
-    
+//creating function to make API call and populate results
+function displaySearchTerm(){
+//retrieving input value from search bar
     word= $("#term-input").val().trim();
     console.log(word);
+//establishing url for api call
     var key= "?key=1f40dde8-50d6-4eb6-9168-6f465c469eb9";
-    
     var queryUrl= "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
-$("#definition").empty();
 
+//emptying definition container 
+    $("#definition").empty();
+
+//making the API call using ajax to communicate with server
 $.ajax({
     url: queryUrl + word + key,
     method:"GET"
 }).then(function(response){
-    var results= response;
     console.log(response);
-// for (var i=0; i<results.length; i++) {
+//mapping into the response array to extract first three definiitons 
     var term = response[0].shortdef[0]; 
     var termTwo = response[0].shortdef[1];
     var termThree = response[0].shortdef[2];
-    var thermFour = response[0].shortdef[3];
-
+//execute code even if response is undefined, will generate error otherwise.
 if (response[i] == undefined) {
     var termDiv = $("<div>");
     var p= $("<p>");
@@ -41,10 +42,9 @@ if (response[i] == undefined) {
 
 
     var input = $("#term-input").val("");
+//execute function even if definitions do not have idioms. 
 } else if (response[i].fl!=("idiom")){
-    // for (var i=0; i<response.length; i++){
-    // }
-    // localStorage.clear();
+   
 
     var termDiv = $("<div>");
     var p= $("<p>");
@@ -63,12 +63,12 @@ if (response[i] == undefined) {
 
 
 };
-  
 
-// }
 });
 
 }
+
+//creating function to store data on click of save button 
 
 $(".save").on("click", function(event){
     
@@ -83,7 +83,6 @@ $(".save").on("click", function(event){
     console.log(scapeCounter);
     $("#stackCounter").html(scapeCounter);
     $("#stackCounter").addClass(uk-animation-shake);
-    // localStorage.setItem("Terms: " , JSON.stringify(storageInfoG));
     }
  }); //end of click listener
 
@@ -98,4 +97,3 @@ $(".search").on("click", function(event){
 
 });
 
-// $(document).on("click", ".search", displaySearchTerm);
